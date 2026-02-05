@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+    /* Cozy Theme (Warm & Homely) */
+    --bg-color: #FFF8F0;
+    /* Cream/Warm Off-White */
+    --text-color: #4A403A;
+    /* Bootstrap Warm Gray / Brownish */
+
+    --card-bg: #FFFFFF;
+
+    /* Soft, warm palette */
+    --primary-color: #FF8BA7;
+    /* Soft Pink/Coral - Friendly */
+    --secondary-color: #8D6E63;
+    /* Warm Brown */
+    --accent-color: #95D5B2;
+    /* Soft Sage Green */
+
+    --nav-bg: #FFC6C6;
+    /* Pastel Pink for Nav */
+    --nav-text: #4A403A;
+
+    --shadow: 0 10px 15px -3px rgba(141, 110, 99, 0.1), 0 4px 6px -2px rgba(141, 110, 99, 0.05);
+    /* Warm colored shadow */
+    --radius: 1.5rem;
+    /* Extra rounded */
+    /* Extra rounded */
+    --transition-speed: 0.5s;
+
+    --font-heading: 'Nunito', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+}
+
+/* Calm Mode Theme (Muted & Soft) - Overrides */
+body.calm-mode {
+    --bg-color: #F5F5F4;
+    /* Cool Grey */
+    --text-color: #57534E;
+    --card-bg: #FFFFFF;
+    --primary-color: #94A3B8;
+    --secondary-color: #A8A29E;
+    --accent-color: #CBD5E1;
+    --nav-bg: #E7E5E4;
+    --nav-text: #57534E;
+    --shadow: none;
+    --radius: 1rem;
+}
+
+/* Dark Mode Theme - High Contrast */
+body.dark-mode {
+    --bg-color: #121212;
+    /* Very dark background */
+    --text-color: #E0E0E0;
+    /* Light text for contrast */
+    --card-bg: #1E1E1E;
+    /* Slightly lighter than background */
+    --primary-color: #BB86FC;
+    /* Accent purple */
+    --secondary-color: #03DAC5;
+    /* Accent teal */
+    --accent-color: #CF6679;
+    /* Accent red */
+    --nav-bg: #1F1F1F;
+    /* Dark nav background */
+    --nav-text: #E0E0E0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --radius: 1rem;
+}
+
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    background-image: url('../assets/puzzle_bg.svg');
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 300px 300px;
+    /* Adjust scale of pattern */
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Apply smooth transition to all theme-able properties on all elements */
+*, *::before, *::after {
+    transition: background-color var(--transition-speed) ease-in-out, 
+                color var(--transition-speed) ease-in-out, 
+                border-color var(--transition-speed) ease-in-out, 
+                fill var(--transition-speed) ease-in-out, 
+                stroke var(--transition-speed) ease-in-out,
+                box-shadow var(--transition-speed) ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+buttons {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    outline: none;
+}
+
+/* Accessibility: Visible Focus Indicators */
+:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.btn-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    /* padding handled inside now */
+    border-radius: var(--radius);
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    border: 3px solid transparent;
+    font-weight: 800;
+    /* Bolder font */
+    font-size: 1.25rem;
+    width: 100%;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Bouncy transition */
+    overflow: hidden;
+}
+
+.btn-large:hover {
+    transform: scale(1.02);
+    border-color: var(--primary-color);
+}
+
+/* Responsive Navigation */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 0.5rem;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--card-bg);
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+        animation: slideDown 0.3s ease-out forwards;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

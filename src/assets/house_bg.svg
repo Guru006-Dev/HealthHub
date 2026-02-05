@@ -1,0 +1,48 @@
+<svg width="100%" height="100%" viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+  <!-- Sky / Background -->
+  <rect width="1440" height="800" fill="#FFF8F0"/>
+  
+  <!-- Ground (Hills) -->
+  <path d="M0 600 C 400 550, 700 650, 1440 600 L 1440 800 L 0 800 Z" fill="#E6F4EA"/>
+  <path d="M-100 650 C 300 600, 600 700, 1500 650 L 1500 800 L -100 800 Z" fill="#C3E6CB" opacity="0.6"/>
+
+  <!-- House Group -->
+  <g transform="translate(1000, 350) scale(0.8)">
+    <!-- House Body -->
+    <rect x="50" y="150" width="300" height="250" fill="#FFE4E1" stroke="#8D6E63" stroke-width="0"/>
+    
+    <!-- Roof -->
+    <path d="M20 150 L 200 20 L 380 150 Z" fill="#FF8BA7"/>
+    
+    <!-- Chimney -->
+    <rect x="250" y="50" width="50" height="80" fill="#8D6E63"/>
+    
+    <!-- Door -->
+    <rect x="170" y="250" width="60" height="150" fill="#8D6E63" rx="5"/>
+    <circle cx="180" cy="325" r="5" fill="#FFF"/>
+    
+    <!-- Window -->
+    <rect x="80" y="200" width="60" height="60" fill="#B3E5FC" stroke="#FFF" stroke-width="4"/>
+    <rect x="260" y="200" width="60" height="60" fill="#B3E5FC" stroke="#FFF" stroke-width="4"/>
+
+    <!-- Smoke Animation CSS -->
+    <style>
+      @keyframes floatPuff {
+        0% { transform: translateY(0) scale(1); opacity: 0.8; }
+        100% { transform: translateY(-150px) scale(2); opacity: 0; }
+      }
+      .smoke { fill: #E0E0E0; animation: floatPuff 4s infinite ease-out; }
+      .p1 { animation-delay: 0s; }
+      .p2 { animation-delay: 1.3s; }
+      .p3 { animation-delay: 2.6s; }
+    </style>
+
+    <!-- Smoke Puffs -->
+    <circle cx="275" cy="40" r="15" class="smoke p1"/>
+    <circle cx="275" cy="40" r="12" class="smoke p2"/>
+    <circle cx="275" cy="40" r="18" class="smoke p3"/>
+  </g>
+  
+  <!-- Sun -->
+  <circle cx="100" cy="100" r="60" fill="#FFE082" opacity="0.8"/>
+</svg>
