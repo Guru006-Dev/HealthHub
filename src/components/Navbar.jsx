@@ -70,6 +70,12 @@ const Navbar = ({ isCalmMode }) => {
                     <Link to="/find-help" style={{ textDecoration: 'none', color: 'inherit', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                         Find Help
                     </Link>
+                    <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                        My Safety Profile
+                    </Link>
+                    <Link to="/kit" style={{ textDecoration: 'none', color: 'inherit', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                        My Kit
+                    </Link>
                     <Link to="/quiz">
                         <motion.button
                             onClick={playClickSound}

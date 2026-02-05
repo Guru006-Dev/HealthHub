@@ -7,6 +7,8 @@ const HomePage = React.lazy(() => import('./pages/HomePage'));
 const LessonPage = React.lazy(() => import('./pages/LessonPage'));
 const QuizPage = React.lazy(() => import('./pages/QuizPage'));
 const FindHelpPage = React.lazy(() => import('./pages/FindHelpPage'));
+const MedicalProfilePage = React.lazy(() => import('./pages/MedicalProfilePage'));
+const KitPage = React.lazy(() => import('./pages/KitPage'));
 import PageTransition from './components/PageTransition';
 import ParallaxBackground from './components/ParallaxBackground';
 import FloatingToggle from './components/FloatingToggle';
@@ -48,6 +50,16 @@ const AnimatedRoutes = () => {
               <FindHelpPage />
             </PageTransition>
           } />
+          <Route path="/profile" element={
+            <PageTransition>
+              <MedicalProfilePage />
+            </PageTransition>
+          } />
+          <Route path="/kit" element={
+            <PageTransition>
+              <KitPage />
+            </PageTransition>
+          } />
         </Routes>
       </AnimatePresence>
     </React.Suspense>
@@ -73,8 +85,7 @@ function App() {
       else nextMode = 'default';
 
       const modeLabels = { default: 'Normal Mode', calm: 'Calm Mode', dark: 'Dark Mode' };
-      // Use derived isDarkMode for theme context of the toast itself? 
-      // We can just check nextMode.
+  
       toast.info(`Switched to ${modeLabels[nextMode]}`, {
         position: "bottom-center",
         autoClose: 1500,

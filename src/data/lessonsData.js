@@ -140,7 +140,7 @@ export const lessonsData = [
         icon: Brain,
         color: '#8b5cf6',
         cover: coverFaintingImg,
-        videoId: 'KXIlE3jcz6o', // Dr. Binocs - Why Do We Faint?
+        videoId: null, // Video removed due to restricted embedding
         steps: [
             {
                 text: "Lie the person down on their back.",
@@ -171,7 +171,7 @@ export const lessonsData = [
         icon: Phone,
         color: '#22c55e',
         cover: coverEmergencyImg,
-        videoId: 'wX5w8m6aC1Q', // KidsHealth - Calling 911
+        videoId: null, // Video removed as requested
         steps: [
             {
                 text: "Find a phone.",

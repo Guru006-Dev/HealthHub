@@ -31,7 +31,7 @@ const LessonPage = () => {
     };
 
     return (
-        <div className="container" style={{ maxWidth: '800px', paddingBottom: '3rem' }}>
+        <div className="container" style={{ maxWidth: '800px', paddingBottom: '3rem', paddingTop: '100px' }}>
             <Link
                 to="/home"
                 onClick={playClickSound}
