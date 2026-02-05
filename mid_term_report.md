@@ -7,26 +7,26 @@
 **URL:** [https://github.com/Guru006-Dev/HealthHub](https://github.com/Guru006-Dev/HealthHub)
 
 ## 3. Extension Features (Forms)
-We extended the project by adding a **Medical Safety Profile** (`MedicalProfilePage.jsx`). This new page uses React Forms to allow children or parents to save emergency contact info and sensory preferences locally. We also added a **First Aid Kit Checklist** to gamify the learning experience.
+I extended the project by adding a **Medical Safety Profile** (`MedicalProfilePage.jsx`). This new page uses React Forms to allow children or parents to save emergency contact info and sensory preferences locally. We also added a **First Aid Kit Checklist** to gamify the learning experience.
 
 ## 4. Concept Verification (Code Proof)
 
 Here is the detailed proof of where each concept is implemented across the **entire project**:
 
 ### 1. Function Component
-We used Functional Components throughout the application as the primary building block. A key example is the main **App** component.
+I used Functional Components throughout the application as the primary building block. A key example is the main **App** component.
 *   **File**: `src/App.jsx`
 *   **Location**: Line 73
 *   **Code**: `function App() { ... }`
 
 ### 2. Class Component
-We implemented a `PrivacyNotice` component using the traditional `class` syntax to satisfy the requirement for legacy React support.
+I implemented a `PrivacyNotice` component using the traditional `class` syntax to satisfy the requirement for legacy React support.
 *   **File**: `src/pages/MedicalProfilePage.jsx`
 *   **Location**: Lines 24-39
 *   **Code**: `class PrivacyNotice extends Component { render() { ... } }`
 
 ### 3. State Management
-We used the `useState` Hook extensively for managing application state, such as the current Theme Mode (Normal/Calm/Dark).
+I used the `useState` Hook extensively for managing application state, such as the current Theme Mode (Normal/Calm/Dark).
 *   **File**: `src/App.jsx`
 *   **Location**: Line 74
 *   **Code**: `const [mode, setMode] = useState('default');`
@@ -38,7 +38,7 @@ The `AudioButton` component is a perfect example of a stateless component; it re
 *   **Code**: `const AudioButton = ({ text }) => { ... }`
 
 ### 5. Events
-We handle user interactions using standard React events. For example, the `onClick` event in the Audio Button triggers the text-to-speech function.
+I handle user interactions using standard React events. For example, the `onClick` event in the Audio Button triggers the text-to-speech function.
 *   **File**: `src/components/AudioButton.jsx`
 *   **Location**: Line 21
 *   **Code**: `onClick={speak}`
