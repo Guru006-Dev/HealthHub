@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import { ArrowLeft, Navigation } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import TextToSpeech from '../components/TextToSpeech';
 
 // Fix for Leaflet marker icons in React
 import L from 'leaflet';
@@ -72,12 +73,15 @@ const FindHelpPage = () => {
                     <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
                         <Navigation size={40} color="var(--primary-color)" /> Find Nearby Help
                     </h1>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                        <TextToSpeech text="This map shows hospitals and clinics near you. Click 'Call Now' if you need help." />
+                    </div>
                     <p style={{ fontSize: '1.2rem', opacity: 0.8 }}>
                         Locating nearest hospitals and clinics...
                     </p>
                 </header>
 
-                <div style={{ height: '500px', width: '100%', borderRadius: '1.5rem', overflow: 'hidden', boxShadow: 'var(--shadow)', border: '4px solid var(--card-bg)' }}>
+                <div className="glass-card" style={{ height: '500px', width: '100%', padding: '0.5rem', overflow: 'hidden' }}>
                     {loading ? (
                         <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f8fafc' }}>
                             <h2>Locating you...</h2>
@@ -116,7 +120,8 @@ const FindHelpPage = () => {
                         <motion.div
                             key={h.id}
                             whileHover={{ y: -5 }}
-                            style={{ padding: '1.5rem', background: 'var(--card-bg)', borderRadius: '1rem', boxShadow: 'var(--shadow)' }}
+                            className="glass-card"
+                            style={{ padding: '1.5rem' }}
                         >
                             <h3 style={{ margin: '0 0 0.5rem 0' }}>🏥 {h.name}</h3>
                             <p style={{ margin: 0, opacity: 0.7 }}>{h.type}</p>

@@ -12,7 +12,6 @@ const Footer = () => (
             left: 0,
             width: '100%',
             padding: '1rem 0',
-            padding: '1rem 0',
             background: 'rgba(15, 23, 42, 0.3)', // Dark Glass to match Home
             backdropFilter: 'blur(12px)',
             WebkitBackdropFilter: 'blur(12px)',

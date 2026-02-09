@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { lessonsData } from '../data/lessonsData';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import TextToSpeech from '../components/TextToSpeech';
 
 const HomePage = () => {
     const [activeLessonId, setActiveLessonId] = useState(lessonsData[0].id);
@@ -99,6 +100,9 @@ const HomePage = () => {
                             Simple, step-by-step instructions for common first aid emergencies.
                             Scroll to explore and find the help you need.
                         </p>
+                        <div style={{ marginTop: '1rem' }}>
+                            <TextToSpeech text="Simple, step-by-step instructions for common first aid emergencies. Scroll to explore and find the help you need." />
+                        </div>
                     </header>
 
                     {/* Lesson Sections */}
@@ -108,39 +112,54 @@ const HomePage = () => {
                             data-id={lesson.id}
                             ref={el => sectionRefs.current[lesson.id] = el}
                             style={{
-                                minHeight: '60vh', // Ensure enough space to scroll
+                                minHeight: '50vh', // Slightly reduced to fit cards better
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
-                                paddingLeft: '1rem',
-                                borderLeft: `4px solid ${activeLessonId === lesson.id ? lesson.color : 'transparent'}`,
-                                transition: 'border-color 0.3s ease'
+                                padding: '1rem' // Added padding for card container
                             }}
                         >
                             <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5 }}
+                                whileHover={{ scale: 1.02, translateY: -5 }}
+                                style={{
+                                    background: 'rgba(255, 255, 255, 0.8)',
+                                    backdropFilter: 'blur(10px)',
+                                    borderRadius: '24px',
+                                    padding: '2.5rem',
+                                    boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+                                    border: `1px solid ${lesson.color}30`, // Subtle colored border
+                                    transition: 'all 0.3s ease'
+                                }}
                             >
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                                    <lesson.icon size={32} color={lesson.color} />
+                                    <div style={{
+                                        padding: '0.8rem',
+                                        borderRadius: '16px',
+                                        background: `${lesson.color}20`,
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                    }}>
+                                        <lesson.icon size={28} color={lesson.color} />
+                                    </div>
                                     <span style={{
                                         textTransform: 'uppercase',
-                                        letterSpacing: '2px',
-                                        fontWeight: '600',
+                                        letterSpacing: '1.5px',
+                                        fontWeight: '700',
                                         color: lesson.color,
-                                        fontSize: '0.9rem'
+                                        fontSize: '0.85rem'
                                     }}>
                                         First Aid
                                     </span>
                                 </div>
 
-                                <h2 style={{ fontSize: '3rem', margin: '0 0 1.5rem', fontWeight: '700' }}>
+                                <h2 style={{ fontSize: '2.5rem', margin: '0 0 1rem', fontWeight: '800', color: '#1e293b' }}>
                                     {lesson.title}
                                 </h2>
 
-                                <p style={{ fontSize: '1.1rem', opacity: 0.7, marginBottom: '2rem', maxWidth: '400px', lineHeight: 1.6 }}>
+                                <p style={{ fontSize: '1.1rem', opacity: 0.8, marginBottom: '2rem', lineHeight: 1.6, color: '#475569' }}>
                                     Learn exactly what to do when someone is experiencing {lesson.title.toLowerCase()}.
                                     Quick thinking can save lives.
                                 </p>
@@ -160,7 +179,8 @@ const HomePage = () => {
                                             alignItems: 'center',
                                             gap: '0.5rem',
                                             boxShadow: `0 10px 20px -5px ${lesson.color}80`,
-                                            transition: 'transform 0.2s'
+                                            transition: 'transform 0.2s',
+                                            width: 'fit-content'
                                         }}
                                         onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
                                         onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
@@ -183,7 +203,6 @@ const HomePage = () => {
                     top: 0,
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
                     justifyContent: 'center',
                     background: 'rgba(15, 23, 42, 0.3)', // Dark Glass
                     backdropFilter: 'blur(10px)',
@@ -236,7 +255,7 @@ const HomePage = () => {
                     </AnimatePresence>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

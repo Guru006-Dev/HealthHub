@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { lessonsData } from '../data/lessonsData';
-import AudioButton from '../components/AudioButton';
+import TextToSpeech from '../components/TextToSpeech';
 import { ArrowLeft, ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { playClickSound, playHoverSound } from '../utils/soundEffects';
@@ -45,10 +45,8 @@ const LessonPage = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
+                className="glass-card"
                 style={{
-                    backgroundColor: 'var(--card-bg)',
-                    borderRadius: 'var(--radius)',
-                    boxShadow: 'var(--shadow)',
                     padding: '2rem',
                     borderTop: `10px solid ${lesson.color}`,
                     overflow: 'hidden' // Keep animations inside
@@ -107,7 +105,7 @@ const LessonPage = () => {
                             </p>
 
                             <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                <AudioButton text={lesson.steps[currentStep].audio} />
+                                <TextToSpeech text={lesson.steps[currentStep].audio} />
                             </div>
                         </motion.div>
                     </AnimatePresence>

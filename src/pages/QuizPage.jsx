@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Check, X, RefreshCw } from 'lucide-react';
-import AudioButton from '../components/AudioButton';
+import TextToSpeech from '../components/TextToSpeech';
 import { motion, AnimatePresence } from 'framer-motion';
 const Confetti = React.lazy(() => import('../components/Confetti'));
 import { toast } from 'react-toastify';
@@ -85,8 +85,8 @@ const QuizPage = () => {
                         key="score"
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        className="btn-large"
-                        style={{ cursor: 'default', padding: '3rem' }}
+                        className="glass-card"
+                        style={{ cursor: 'default', padding: '3rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}
                     >
                         <h2 style={{ fontSize: '2rem' }}>Good Job!</h2>
                         <p style={{ fontSize: '1.5rem', margin: '1rem 0' }}>
@@ -119,7 +119,8 @@ const QuizPage = () => {
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: -50, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        style={{ backgroundColor: 'var(--card-bg)', padding: '2rem', borderRadius: 'var(--radius)', boxShadow: 'var(--shadow)' }}
+                        className="glass-card"
+                        style={{ padding: '2rem' }}
                     >
 
                         <div style={{ marginBottom: '2rem' }}>
@@ -130,7 +131,7 @@ const QuizPage = () => {
                                 {currentQData.question}
                             </h2>
                             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
-                                <AudioButton text={currentQData.audio} />
+                                <TextToSpeech text={currentQData.audio} />
                             </div>
                         </div>
 

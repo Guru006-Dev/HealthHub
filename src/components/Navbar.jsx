@@ -31,8 +31,8 @@ const Navbar = ({ isCalmMode }) => {
             ? 'rgba(231, 229, 228, 0.8)' // Warm grey for Calm Mode
             : 'rgba(255, 255, 255, 0.65)'; // Bright white for Default
 
-    const navTextColor = isHomePage ? '#F8FAFC' : 'var(--nav-text)';
-    const navBorder = isHomePage ? '1px solid rgba(255,255,255,0.05)' : '1px solid rgba(0,0,0,0.05)';
+    const navTextColor = 'var(--nav-text)';
+    const navBorder = '1px solid rgba(0,0,0,0.05)';
 
     return (
         <motion.nav
@@ -76,6 +76,9 @@ const Navbar = ({ isCalmMode }) => {
                     <Link to="/kit" style={{ textDecoration: 'none', color: 'inherit', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                         My Kit
                     </Link>
+                    <Link to="/games" style={{ textDecoration: 'none', color: 'inherit', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                        Games
+                    </Link>
                     <Link to="/quiz">
                         <motion.button
                             onClick={playClickSound}
@@ -83,8 +86,8 @@ const Navbar = ({ isCalmMode }) => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             style={{
-                                background: isHomePage ? 'rgba(255,255,255,0.1)' : 'var(--card-bg)',
-                                color: isHomePage ? '#fff' : 'var(--text-color)',
+                                background: isHomePage ? 'rgba(255,255,255,0.5)' : 'var(--card-bg)',
+                                color: 'var(--text-color)',
                                 border: isHomePage ? '1px solid rgba(255,255,255,0.2)' : 'none',
                                 padding: '0.5rem 1.25rem',
                                 borderRadius: '2rem',
@@ -136,6 +139,17 @@ const Navbar = ({ isCalmMode }) => {
                         borderColor: isHomePage ? 'rgba(255,255,255,0.1)' : 'transparent'
                     }}>
                         <span>Find Help</span>
+                    </div>
+                </Link>
+                <Link to="/games" onClick={() => { playClickSound(); setIsMenuOpen(false); }} style={{ width: '100%', textDecoration: 'none', marginTop: '0.5rem' }}>
+                    <div className="btn-large" style={{
+                        padding: '1rem',
+                        flexDirection: 'row',
+                        background: isHomePage ? 'rgba(255,255,255,0.05)' : 'var(--card-bg)',
+                        color: isHomePage ? '#fff' : 'inherit',
+                        borderColor: isHomePage ? 'rgba(255,255,255,0.1)' : 'transparent'
+                    }}>
+                        <span>Games</span>
                     </div>
                 </Link>
             </div>

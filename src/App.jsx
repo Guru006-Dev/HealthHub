@@ -9,6 +9,8 @@ const QuizPage = React.lazy(() => import('./pages/QuizPage'));
 const FindHelpPage = React.lazy(() => import('./pages/FindHelpPage'));
 const MedicalProfilePage = React.lazy(() => import('./pages/MedicalProfilePage'));
 const KitPage = React.lazy(() => import('./pages/KitPage'));
+const MathGamePage = React.lazy(() => import('./pages/MathGamePage'));
+const GamesPage = React.lazy(() => import('./pages/GamesPage'));
 import PageTransition from './components/PageTransition';
 import ParallaxBackground from './components/ParallaxBackground';
 import FloatingToggle from './components/FloatingToggle';
@@ -60,6 +62,16 @@ const AnimatedRoutes = () => {
               <KitPage />
             </PageTransition>
           } />
+          <Route path="/math-game" element={
+            <PageTransition>
+              <MathGamePage />
+            </PageTransition>
+          } />
+          <Route path="/games" element={
+            <PageTransition>
+              <GamesPage />
+            </PageTransition>
+          } />
         </Routes>
       </AnimatePresence>
     </React.Suspense>
@@ -85,7 +97,7 @@ function App() {
       else nextMode = 'default';
 
       const modeLabels = { default: 'Normal Mode', calm: 'Calm Mode', dark: 'Dark Mode' };
-  
+
       toast.info(`Switched to ${modeLabels[nextMode]}`, {
         position: "bottom-center",
         autoClose: 1500,

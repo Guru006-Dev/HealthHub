@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Check, Star } from 'lucide-react';
+import TextToSpeech from '../components/TextToSpeech';
 
 const kitItems = [
     { id: 'bandages', name: 'Plasters / Band-Aids', icon: '🩹' },
@@ -44,9 +45,12 @@ const KitPage = () => {
                 className="glass-card"
                 style={{ padding: '2rem' }}
             >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                    <Briefcase size={40} color="var(--primary-color)" />
-                    <h1 style={{ margin: 0, fontSize: '2.5rem', color: 'var(--text-color)' }}>My First Aid Kit</h1>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        <Briefcase size={40} color="var(--primary-color)" />
+                        <h1 style={{ margin: 0, fontSize: '2.5rem', color: 'var(--text-color)' }}>My First Aid Kit</h1>
+                    </div>
+                    <TextToSpeech text="This is your First Aid Kit. Collect items like bandages, wipes, and gloves to become a Safety Scout!" />
                 </div>
 
                 <p style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>
