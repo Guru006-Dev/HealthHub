@@ -6,8 +6,8 @@ HealthHub is an interactive, gamified, and sensory-friendly web application desi
 ---
 
 ## 1. Student Details
-**Name:** [Enter Name Here]
-**Roll No:** [Enter Roll No Here]
+**Name:** Guru.D
+**Roll No:** CB.SC.U4CSE23720
 
 ---
 
@@ -70,7 +70,7 @@ The **Sensory Logic Lab** game specifically targets executive functions—planni
 
 ---
 
-## 7. List of Similar Products
+## 6. List of Similar Products
 
 | Product / URL | Description | Key Features |
 | :--- | :--- | :--- |
@@ -81,7 +81,7 @@ The **Sensory Logic Lab** game specifically targets executive functions—planni
 
 ---
 
-## 8. Research Labs Working in the Area
+## 7. Research Labs Working in the Area
 
 1.  **Seattle Children's Innovative Technologies Lab (SCITL):** Dr. Frederick Shic directs this lab, focusing on mobile apps, video games, and VR for autism therapeutics and sensing.
 2.  **Play2PREVENT (p2P) Lab (Dartmouth):** Develops "serious games" to build emotional resilience and coping strategies for neurodiverse youth.
@@ -90,7 +90,7 @@ The **Sensory Logic Lab** game specifically targets executive functions—planni
 
 ---
 
-## 9. Algorithms Implemented
+## 8. Algorithms Implemented
 
 1.  **Pathfinding & Grid Logic:** Used in the *Sensory Logic Lab* to calculate robot movement, validate paths against obstacles, and execute sequential command arrays.
 2.  **Speech Recognition (Natural Language Processing):** Implementation of the `Web Speech API` to parse continuous audio streams, detect keywords ("Capture", "Cheese"), and trigger UI events.
@@ -99,7 +99,7 @@ The **Sensory Logic Lab** game specifically targets executive functions—planni
 
 ---
 
-## 10. Feature Enhancements (Future Scope)
+## 9. Feature Enhancements (Future Scope)
 
 ### 1. AI-Powered Roleplay Chatbot
 **Justification:** Autistic children often struggle with social scripting. An AI chatbot could simulate a 911 operator, allowing safe, low-stakes practice of emergency conversations.
