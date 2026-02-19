@@ -3,13 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { Home, Menu, X } from 'lucide-react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { playHoverSound, playClickSound } from '../utils/soundEffects';
+import FlowingMenu from './FlowingMenu';
 
 const Navbar = ({ isCalmMode }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const location = useLocation();
 
-    // Check if we are on the Home Page (Space Theme)
-    const isHomePage = location.pathname === '/home' || location.pathname === '/';
+    // Check if we are on the Landing Page (Dashboard)
+    const isLandingPage = location.pathname === '/';
 
     const toggleMenu = () => {
         playClickSound();
@@ -25,135 +26,74 @@ const Navbar = ({ isCalmMode }) => {
     });
 
     // Dynamic Styles based on route
-    const navBackground = isHomePage
-        ? 'rgba(15, 23, 42, 0.3)' // Unified Dark Glass
-        : isCalmMode
-            ? 'rgba(231, 229, 228, 0.8)' // Warm grey for Calm Mode
-            : 'rgba(255, 255, 255, 0.65)'; // Bright white for Default
-
+    const navBackground = 'transparent'; // Always transparent as requested/styled
     const navTextColor = 'var(--nav-text)';
-    const navBorder = '1px solid rgba(0,0,0,0.05)';
+
+    const menuItems = [
+        { text: 'Dashboard', link: '/dashboard', image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1932&auto=format&fit=crop' },
+        { text: 'Lessons', link: '/lessons', image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop' },
+        { text: 'Find Help', link: '/find-help', image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop' },
+        { text: 'My Profile', link: '/profile', image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1932&auto=format&fit=crop' },
+        { text: 'My Kit', link: '/kit', image: 'https://images.unsplash.com/photo-1603398938378-e54eab446dde?q=80&w=2070&auto=format&fit=crop' },
+        { text: 'Games', link: '/games', image: 'https://images.unsplash.com/photo-1616428789502-36c968f8691f?q=80&w=2070&auto=format&fit=crop' },
+        { text: 'Take Quiz', link: '/quiz', image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop' },
+    ];
 
     return (
-        <motion.nav
-            role="navigation"
-            initial={{ padding: '1.2rem 1rem', background: navBackground }}
-            animate={{
-                padding: isScrolled ? '0.5rem 1rem' : '1.2rem 1rem',
-                // Always transparent background as requested
-                background: 'transparent',
-                borderBottom: 'none'
-            }}
-            transition={{ duration: 0.3 }}
-            style={{
-                backdropFilter: 'none',
-                WebkitBackdropFilter: 'none',
-                color: navTextColor,
-                position: 'absolute', // Overlay content
-                width: '100%',
-                top: 0,
-                zIndex: 100,
-            }}
-        >
-            <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Link
-                    to="/home"
-                    onClick={playClickSound}
-                    onMouseEnter={playHoverSound}
-                    style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
-                >
-                    <Home size={28} />
-                    <span style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>First Aid</span>
-                </Link>
-
-                <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <Link to="/find-help" style={{ textDecoration: 'none', color: 'inherit', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                        Find Help
-                    </Link>
-                    <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                        My Safety Profile
-                    </Link>
-                    <Link to="/kit" style={{ textDecoration: 'none', color: 'inherit', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                        My Kit
-                    </Link>
-                    <Link to="/games" style={{ textDecoration: 'none', color: 'inherit', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                        Games
-                    </Link>
-                    <Link to="/quiz">
-                        <motion.button
-                            onClick={playClickSound}
-                            onMouseEnter={playHoverSound}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            style={{
-                                background: isHomePage ? 'rgba(255,255,255,0.5)' : 'var(--card-bg)',
-                                color: 'var(--text-color)',
-                                border: isHomePage ? '1px solid rgba(255,255,255,0.2)' : 'none',
-                                padding: '0.5rem 1.25rem',
-                                borderRadius: '2rem',
-                                fontWeight: 'bold',
-                                boxShadow: isHomePage ? '0 4px 12px rgba(0,0,0,0.2)' : '0 2px 4px rgba(0,0,0,0.1)',
-                                cursor: 'pointer'
-                            }}
-                        >
-                            Take Quiz
-                        </motion.button>
-                    </Link>
-                </div>
-
-                {/* Mobile Menu Button */}
-                <button
-                    className="mobile-menu-btn"
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', padding: '0.5rem' }}
-                >
-                    {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-                </button>
-            </div>
-
-            {/* Mobile Menu Dropdown */}
-            <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}
+        <>
+            <motion.nav
+                role="navigation"
+                initial={{ padding: '1.2rem 1rem', background: 'transparent' }}
+                animate={{
+                    padding: isScrolled ? '0.5rem 1rem' : '1.2rem 1rem',
+                    background: 'transparent',
+                }}
+                transition={{ duration: 0.3 }}
                 style={{
-                    background: isHomePage ? '#0f172a' : 'var(--card-bg)',
-                    color: isHomePage ? '#fff' : 'inherit'
+                    position: 'absolute',
+                    width: '100%',
+                    top: 0,
+                    zIndex: 100,
+                    color: isLandingPage ? '#fff' : navTextColor,
                 }}
             >
-                <Link to="/quiz" onClick={() => { playClickSound(); setIsMenuOpen(false); }} style={{ width: '100%', textDecoration: 'none' }}>
-                    <div className="btn-large" style={{
-                        padding: '1rem',
-                        flexDirection: 'row',
-                        background: isHomePage ? 'rgba(255,255,255,0.05)' : 'var(--card-bg)',
-                        color: isHomePage ? '#fff' : 'inherit',
-                        borderColor: isHomePage ? 'rgba(255,255,255,0.1)' : 'transparent'
-                    }}>
-                        <span>Take Quiz</span>
-                    </div>
-                </Link>
-                <Link to="/find-help" onClick={() => { playClickSound(); setIsMenuOpen(false); }} style={{ width: '100%', textDecoration: 'none', marginTop: '0.5rem' }}>
-                    <div className="btn-large" style={{
-                        padding: '1rem',
-                        flexDirection: 'row',
-                        background: isHomePage ? 'rgba(255,255,255,0.05)' : 'var(--card-bg)',
-                        color: isHomePage ? '#fff' : 'inherit',
-                        borderColor: isHomePage ? 'rgba(255,255,255,0.1)' : 'transparent'
-                    }}>
-                        <span>Find Help</span>
-                    </div>
-                </Link>
-                <Link to="/games" onClick={() => { playClickSound(); setIsMenuOpen(false); }} style={{ width: '100%', textDecoration: 'none', marginTop: '0.5rem' }}>
-                    <div className="btn-large" style={{
-                        padding: '1rem',
-                        flexDirection: 'row',
-                        background: isHomePage ? 'rgba(255,255,255,0.05)' : 'var(--card-bg)',
-                        color: isHomePage ? '#fff' : 'inherit',
-                        borderColor: isHomePage ? 'rgba(255,255,255,0.1)' : 'transparent'
-                    }}>
-                        <span>Games</span>
-                    </div>
-                </Link>
-            </div>
-        </motion.nav>
+                <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Link
+                        to="/"
+                        onClick={playClickSound}
+                        onMouseEnter={playHoverSound}
+                        style={{ color: 'inherit', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+                    >
+                        <Home size={28} />
+                        <span style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>First Aid</span>
+                    </Link>
+
+                    {/* Hamburger Menu Button - Always Visible */}
+                    <button
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', padding: '0.5rem', display: 'block' }}
+                    >
+                        {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button>
+                </div>
+            </motion.nav>
+
+            {/* Flowing Menu Overlay */}
+            {isMenuOpen && (
+                <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 9999 }}>
+                    <FlowingMenu
+                        items={menuItems}
+                        borderColor="rgba(100,100,100, 0.2)"
+                        textColor="var(--text-color)"
+                        marqueeBgColor="var(--primary-color)"
+                        marqueeTextColor="var(--bg-color)"
+                        bgColor="var(--bg-color)"
+                        onClose={() => setIsMenuOpen(false)}
+                    />
+                </div>
+            )}
+        </>
     );
 };
 

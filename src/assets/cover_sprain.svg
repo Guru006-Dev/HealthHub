@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" rx="24" fill="#ECFDF5"/>
+  <circle cx="200" cy="160" r="80" fill="#D1FAE5"/>
+  <!-- Leg with wrap -->
+  <rect x="175" y="110" width="50" height="100" rx="20" fill="#6EE7B7" opacity="0.6"/>
+  <!-- Bandage wraps -->
+  <path d="M175 140 L225 150" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M175 155 L225 165" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M175 170 L225 180" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <!-- Pain star -->
+  <circle cx="230" cy="145" r="12" fill="#FCA5A5"/>
+  <text x="230" y="150" text-anchor="middle" font-family="Arial" font-size="14" fill="#DC2626">!</text>
+  <text x="200" y="300" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="28" font-weight="800" fill="#065F46">Sprains</text>
+  <text x="200" y="335" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#064E3B">Learn the R.I.C.E. method</text>
+</svg>

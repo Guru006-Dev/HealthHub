@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" rx="24" fill="#FFFBEB"/>
+  <circle cx="200" cy="160" r="80" fill="#FEF3C7"/>
+  <!-- Bee body -->
+  <ellipse cx="200" cy="150" rx="30" ry="22" fill="#F59E0B"/>
+  <rect x="190" y="148" width="20" height="4" rx="2" fill="#292524"/>
+  <rect x="190" y="155" width="20" height="4" rx="2" fill="#292524"/>
+  <!-- Wings -->
+  <ellipse cx="185" cy="135" rx="15" ry="10" fill="white" opacity="0.7"/>
+  <ellipse cx="215" cy="135" rx="15" ry="10" fill="white" opacity="0.7"/>
+  <!-- Stinger -->
+  <path d="M200 172 L200 182" stroke="#292524" stroke-width="2" stroke-linecap="round"/>
+  <text x="200" y="300" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="28" font-weight="800" fill="#92400E">Bee Sting</text>
+  <text x="200" y="335" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#78350F">Learn what to do after a bee sting</text>
+</svg>

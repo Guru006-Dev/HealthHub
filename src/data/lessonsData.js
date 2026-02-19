@@ -1,4 +1,4 @@
-import { Droplet, Flame, Brain, Frown, Phone } from 'lucide-react';
+import { Droplet, Flame, Brain, Frown, Phone, Wind, Bug, Bone, Pill, Thermometer } from 'lucide-react';
 
 // Import local images
 // Bleeding
@@ -37,6 +37,41 @@ import emergencySayLocationImg from '../assets/emergency_say_location.png';
 import emergencyDontHangUpImg from '../assets/emergency_dont_hang_up.png';
 // Reusing dial 911 image as cover
 const coverEmergencyImg = emergencyDial911Img;
+
+// Choking
+import chokingCoughImg from '../assets/choking_cough.svg';
+import chokingBackBlowsImg from '../assets/choking_back_blows.svg';
+import chokingBellyThrustsImg from '../assets/choking_belly_thrusts.svg';
+import chokingCallHelpImg from '../assets/choking_call_help.svg';
+import coverChokingImg from '../assets/cover_choking.svg';
+
+// Bee Sting
+import beestingMoveAwayImg from '../assets/beesting_move_away.svg';
+import beestingScrapeImg from '../assets/beesting_scrape.svg';
+import beestingWashImg from '../assets/beesting_wash.svg';
+import beestingIceImg from '../assets/beesting_ice.svg';
+import coverBeestingImg from '../assets/cover_beesting.svg';
+
+// Sprains
+import sprainRestImg from '../assets/sprain_rest.svg';
+import sprainIceImg from '../assets/sprain_ice.svg';
+import sprainCompressImg from '../assets/sprain_compress.svg';
+import sprainElevateImg from '../assets/sprain_elevate.svg';
+import coverSprainImg from '../assets/cover_sprain.svg';
+
+// Allergic Reaction
+import allergyAskImg from '../assets/allergy_ask.svg';
+import allergyEpipenImg from '../assets/allergy_epipen.svg';
+import allergyCallImg from '../assets/allergy_call.svg';
+import allergyCalmImg from '../assets/allergy_calm.svg';
+import coverAllergyImg from '../assets/cover_allergy.svg';
+
+// Heatstroke
+import heatShadeImg from '../assets/heat_shade.svg';
+import heatCoolWaterImg from '../assets/heat_cool_water.svg';
+import heatSipWaterImg from '../assets/heat_sip_water.svg';
+import heatCallHelpImg from '../assets/heat_call_help.svg';
+import coverHeatstrokeImg from '../assets/cover_heatstroke.svg';
 
 
 
@@ -165,6 +200,8 @@ export const lessonsData = [
         ],
         warnings: ["Call emergency if they don't wake up in 1 minute."]
     },
+
+
     {
         id: 'emergency',
         title: 'Call Help',

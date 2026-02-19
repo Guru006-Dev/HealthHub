@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#FFFBEB"/>
+  <circle cx="200" cy="110" r="50" fill="#FEF3C7"/>
+  <!-- Tree / shade -->
+  <rect x="195" y="110" width="10" height="40" rx="3" fill="#92400E"/>
+  <circle cx="200" cy="95" r="30" fill="#86EFAC" opacity="0.7"/>
+  <circle cx="185" cy="100" r="20" fill="#86EFAC" opacity="0.6"/>
+  <circle cx="215" cy="100" r="20" fill="#86EFAC" opacity="0.6"/>
+  <!-- Person under shade -->
+  <circle cx="200" cy="125" r="8" fill="#D97706" opacity="0.6"/>
+  <rect x="195" y="133" width="10" height="18" rx="3" fill="#D97706" opacity="0.4"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#92400E">Step 1</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#78350F">Move to a cool, shady place</text>
+</svg>

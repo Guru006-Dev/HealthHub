@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" rx="24" fill="#FFF5F5"/>
+  <circle cx="200" cy="160" r="80" fill="#FED7D7"/>
+  <!-- First aid cross -->
+  <rect x="178" y="120" width="44" height="80" rx="8" fill="#C53030"/>
+  <rect x="160" y="138" width="80" height="44" rx="8" fill="#C53030"/>
+  <!-- Wind lines -->
+  <path d="M140 185 Q165 175 190 185" stroke="#E53E3E" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M145 200 Q170 190 195 200" stroke="#E53E3E" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="200" y="300" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="28" font-weight="800" fill="#C53030">Choking</text>
+  <text x="200" y="335" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#742A2A">Learn how to help someone choking</text>
+</svg>

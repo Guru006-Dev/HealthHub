@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#FFF5F5"/>
+  <circle cx="200" cy="110" r="50" fill="#FED7D7"/>
+  <!-- Person standing -->
+  <circle cx="200" cy="80" r="18" fill="#E53E3E" opacity="0.6"/>
+  <rect x="188" y="98" width="24" height="50" rx="6" fill="#E53E3E" opacity="0.5"/>
+  <!-- Arms around abdomen -->
+  <path d="M175 115 Q188 130 200 128 Q212 130 225 115" stroke="#C53030" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Arrow up -->
+  <path d="M200 140 L200 125" stroke="#C53030" stroke-width="3" stroke-linecap="round"/>
+  <path d="M195 130 L200 122 L205 130" stroke="#C53030" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#C53030">Step 3</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#742A2A">Give 5 belly thrusts</text>
+</svg>

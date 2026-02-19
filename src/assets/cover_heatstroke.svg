@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" rx="24" fill="#FFFBEB"/>
+  <circle cx="200" cy="160" r="80" fill="#FEF3C7"/>
+  <!-- Sun -->
+  <circle cx="200" cy="140" r="30" fill="#F59E0B"/>
+  <!-- Sun rays -->
+  <line x1="200" y1="100" x2="200" y2="90" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="228" y1="112" x2="235" y2="105" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="240" y1="140" x2="250" y2="140" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="228" y1="168" x2="235" y2="175" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="200" y1="180" x2="200" y2="190" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="172" y1="168" x2="165" y2="175" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="160" y1="140" x2="150" y2="140" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <line x1="172" y1="112" x2="165" y2="105" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <!-- Thermometer -->
+  <rect x="190" y="195" width="20" height="45" rx="10" fill="#EF4444"/>
+  <circle cx="200" cy="240" r="12" fill="#EF4444"/>
+  <rect x="195" y="200" width="10" height="30" rx="5" fill="#FCA5A5"/>
+  <text x="200" y="310" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="28" font-weight="800" fill="#92400E">Heatstroke</text>
+  <text x="200" y="345" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#78350F">Learn to treat heat emergencies</text>
+</svg>

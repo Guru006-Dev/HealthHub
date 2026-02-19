@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#FFFBEB"/>
+  <circle cx="200" cy="110" r="50" fill="#FEF3C7"/>
+  <!-- Arm with sting mark -->
+  <rect x="160" y="95" width="80" height="30" rx="12" fill="#FBBF24" opacity="0.5"/>
+  <!-- Stinger -->
+  <path d="M200 98 L200 88" stroke="#292524" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="200" cy="98" r="3" fill="#DC2626"/>
+  <!-- Card scraping -->
+  <rect x="210" y="85" width="30" height="20" rx="3" fill="#D97706" opacity="0.7"/>
+  <path d="M215 95 L205 100" stroke="#92400E" stroke-width="2" stroke-linecap="round"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#92400E">Step 2</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#78350F">Scrape the stinger out</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#FFF5F5"/>
+  <circle cx="200" cy="110" r="50" fill="#FED7D7"/>
+  <!-- Person outline -->
+  <circle cx="200" cy="85" r="20" fill="#E53E3E" opacity="0.6"/>
+  <rect x="185" y="105" width="30" height="40" rx="6" fill="#E53E3E" opacity="0.5"/>
+  <!-- Cough waves -->
+  <path d="M230 100 Q250 95 265 100" stroke="#C53030" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M235 110 Q255 105 275 110" stroke="#C53030" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M230 120 Q250 115 270 120" stroke="#C53030" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#C53030">Step 1</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#742A2A">Encourage them to cough</text>
+</svg>

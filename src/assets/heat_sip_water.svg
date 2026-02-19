@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#FFFBEB"/>
+  <circle cx="200" cy="110" r="50" fill="#FEF3C7"/>
+  <!-- Water glass -->
+  <path d="M180 80 L175 140 Q175 145 180 145 L220 145 Q225 145 225 140 L220 80 Z" fill="#BFDBFE" opacity="0.7"/>
+  <path d="M180 80 L220 80" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/>
+  <!-- Water inside -->
+  <path d="M178 100 L222 100 L220 140 Q220 143 218 143 L182 143 Q180 143 180 140 Z" fill="#60A5FA" opacity="0.5"/>
+  <!-- Water wave -->
+  <path d="M179 100 Q190 96 200 100 Q210 104 221 100" stroke="#3B82F6" stroke-width="2" fill="none"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#92400E">Step 3</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#78350F">Give small sips of water</text>
+</svg>

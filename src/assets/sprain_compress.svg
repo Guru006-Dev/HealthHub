@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#ECFDF5"/>
+  <circle cx="200" cy="110" r="50" fill="#D1FAE5"/>
+  <!-- Wrapped limb -->
+  <rect x="180" y="80" width="40" height="60" rx="16" fill="#6EE7B7" opacity="0.5"/>
+  <!-- Bandage wraps -->
+  <path d="M180 90 L220 97" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M180 102 L220 109" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M180 114 L220 121" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M180 126 L220 133" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <!-- "C" letter -->
+  <text x="200" y="158" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="24" font-weight="900" fill="#059669">C</text>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#065F46">Step 3: Compress</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#064E3B">Wrap with a bandage</text>
+</svg>

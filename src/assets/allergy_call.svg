@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#F5F3FF"/>
+  <circle cx="200" cy="110" r="50" fill="#EDE9FE"/>
+  <!-- Phone -->
+  <rect x="180" y="75" width="40" height="70" rx="8" fill="#7C3AED"/>
+  <rect x="185" y="82" width="30" height="48" rx="4" fill="#F5F3FF"/>
+  <circle cx="200" cy="138" r="4" fill="#EDE9FE"/>
+  <!-- 911 -->
+  <text x="200" y="112" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="16" font-weight="800" fill="#7C3AED">911</text>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#5B21B6">Step 3</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#4C1D95">Call 911 about the allergy</text>
+</svg>

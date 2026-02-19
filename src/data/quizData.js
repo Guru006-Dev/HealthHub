@@ -33,5 +33,6 @@ export const quizQuestions = [
         audio: "What is the first step for a bleeding wound?",
         options: ["Wash your hands", "Apply a tourniquet immediately", "Ignore it"],
         correct: 0
-    }
+    },
+
 ];

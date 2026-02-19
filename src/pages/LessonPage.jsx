@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { lessonsData } from '../data/lessonsData';
 import TextToSpeech from '../components/TextToSpeech';
 import { ArrowLeft, ArrowRight, AlertTriangle, CheckCircle } from 'lucide-react';
@@ -8,6 +8,7 @@ import { playClickSound, playHoverSound } from '../utils/soundEffects';
 
 const LessonPage = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const lesson = lessonsData.find(l => l.id === id);
     const [currentStep, setCurrentStep] = useState(0);
 
@@ -32,14 +33,27 @@ const LessonPage = () => {
 
     return (
         <div className="container" style={{ maxWidth: '800px', paddingBottom: '3rem', paddingTop: '100px' }}>
-            <Link
-                to="/home"
-                onClick={playClickSound}
+            <button
+                onClick={() => {
+                    playClickSound();
+                    navigate(-1);
+                }}
                 onMouseEnter={playHoverSound}
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', margin: '2rem 0', textDecoration: 'none', color: 'var(--secondary-color)', fontWeight: 'bold' }}
+                style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    margin: '2rem 0',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    color: 'var(--secondary-color)',
+                    fontWeight: 'bold',
+                    fontSize: '1rem'
+                }}
             >
-                <ArrowLeft size={20} /> Back to Home
-            </Link>
+                <ArrowLeft size={20} /> Go Back
+            </button>
 
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -92,10 +106,11 @@ const LessonPage = () => {
                                 src={lesson.steps[currentStep].image}
                                 alt="Step illustration"
                                 style={{
+                                    display: 'block',
                                     maxWidth: '100%',
                                     height: '300px',
                                     objectFit: 'contain',
-                                    margin: '1rem 0',
+                                    margin: '1rem auto',
                                     borderRadius: '1rem'
                                 }}
                             />

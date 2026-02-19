@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#F5F3FF"/>
+  <circle cx="200" cy="110" r="50" fill="#EDE9FE"/>
+  <!-- Two people - comfort -->
+  <circle cx="180" cy="85" r="15" fill="#A78BFA" opacity="0.6"/>
+  <rect x="170" y="100" width="20" height="35" rx="6" fill="#A78BFA" opacity="0.4"/>
+  <circle cx="220" cy="85" r="15" fill="#7C3AED" opacity="0.6"/>
+  <rect x="210" y="100" width="20" height="35" rx="6" fill="#7C3AED" opacity="0.4"/>
+  <!-- Heart between them -->
+  <path d="M195 95 Q195 88 200 92 Q205 88 205 95 Q200 103 200 103 Q200 103 195 95Z" fill="#F472B6"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#5B21B6">Step 4</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#4C1D95">Stay calm and comfort them</text>
+</svg>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Footer = () => (
     <motion.footer
@@ -20,9 +21,17 @@ const Footer = () => (
             color: '#cbd5e1', // Light slate text
 
             zIndex: 100,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '1.5rem'
         }}
     >
         <span>© 2026 First Aid Learning App. All rights reserved.</span>
+        <span style={{ opacity: 0.5 }}>|</span>
+        <Link to="/about" style={{ color: '#cbd5e1', textDecoration: 'none', fontWeight: 'bold' }}>
+            About & Credits
+        </Link>
     </motion.footer>
 );
 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#FFFBEB"/>
+  <circle cx="200" cy="110" r="50" fill="#FEF3C7"/>
+  <!-- Phone -->
+  <rect x="180" y="75" width="40" height="70" rx="8" fill="#D97706"/>
+  <rect x="185" y="82" width="30" height="48" rx="4" fill="#FFFBEB"/>
+  <circle cx="200" cy="138" r="4" fill="#FEF3C7"/>
+  <!-- 911 -->
+  <text x="200" y="112" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="16" font-weight="800" fill="#D97706">911</text>
+  <!-- Alert waves -->
+  <path d="M230 85 Q240 80 240 90" stroke="#EF4444" stroke-width="2" fill="none"/>
+  <path d="M235 80 Q250 72 250 92" stroke="#EF4444" stroke-width="2" fill="none"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#92400E">Step 4</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#78350F">Call 911 if very sick</text>
+</svg>

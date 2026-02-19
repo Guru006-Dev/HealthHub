@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#FFFBEB"/>
+  <circle cx="200" cy="110" r="50" fill="#FEF3C7"/>
+  <!-- Person walking away -->
+  <circle cx="170" cy="90" r="14" fill="#D97706" opacity="0.6"/>
+  <rect x="162" y="104" width="16" height="35" rx="5" fill="#D97706" opacity="0.5"/>
+  <!-- Arrow pointing away -->
+  <path d="M150 110 L120 110" stroke="#92400E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M128 105 L120 110 L128 115" stroke="#92400E" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Small bee behind -->
+  <ellipse cx="230" cy="100" rx="10" ry="7" fill="#F59E0B"/>
+  <ellipse cx="225" cy="95" rx="6" ry="4" fill="white" opacity="0.5"/>
+  <ellipse cx="235" cy="95" rx="6" ry="4" fill="white" opacity="0.5"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#92400E">Step 1</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#78350F">Move away calmly</text>
+</svg>

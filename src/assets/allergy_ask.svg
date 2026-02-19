@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#F5F3FF"/>
+  <circle cx="200" cy="110" r="50" fill="#EDE9FE"/>
+  <!-- Bracelet on wrist -->
+  <rect x="170" y="95" width="60" height="30" rx="12" fill="#C4B5FD" opacity="0.6"/>
+  <!-- Medical ID bracelet -->
+  <rect x="185" y="100" width="30" height="20" rx="5" fill="#7C3AED"/>
+  <rect x="191" y="105" width="6" height="10" rx="1" fill="white"/>
+  <rect x="188" y="108" width="12" height="4" rx="1" fill="white"/>
+  <!-- Eye icon (checking) -->
+  <ellipse cx="200" cy="70" rx="18" ry="10" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <circle cx="200" cy="70" r="5" fill="#7C3AED"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#5B21B6">Step 1</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#4C1D95">Check for allergy bracelet</text>
+</svg>

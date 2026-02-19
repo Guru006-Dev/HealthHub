@@ -1,202 +1,138 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { lessonsData } from '../data/lessonsData';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import TextToSpeech from '../components/TextToSpeech';
+import { ArrowRight, Play, BookOpen } from 'lucide-react';
+import TiltCard from '../components/TiltCard';
 
 const HomePage = () => {
-    const [activeLessonId, setActiveLessonId] = useState(lessonsData[0].id);
-    const observerRef = useRef(null);
-    const sectionRefs = useRef({});
-
-    // Set up Intersection Observer to track which lesson is visible
-    useEffect(() => {
-        const options = {
-            root: null,
-            rootMargin: '-40% 0px -40% 0px', // Active when element is in the middle 20% of screen
-            threshold: 0
-        };
-
-        observerRef.current = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const lessonId = entry.target.getAttribute('data-id');
-                    if (lessonId) {
-                        setActiveLessonId(lessonId);
-                    }
-                }
-            });
-        }, options);
-
-        // Observe all lesson sections
-        Object.values(sectionRefs.current).forEach(section => {
-            if (section) observerRef.current.observe(section);
-        });
-
-        return () => {
-            if (observerRef.current) observerRef.current.disconnect();
-        };
-    }, []);
-
-    const activeLesson = lessonsData.find(l => l.id === activeLessonId) || lessonsData[0];
+    const [activeLesson, setActiveLesson] = useState(lessonsData[0]);
 
     return (
-        <div style={{ minHeight: '100vh', background: 'transparent', color: 'var(--text-color)' }}>
-            <div className="split-layout" style={{
-                display: 'flex',
-                flexDirection: 'row', // Default to row for desktop
-                alignItems: 'flex-start',
-                width: '100%',
-                maxWidth: '100%',
+        <div style={{ minHeight: '100vh', background: '#F8FAFC' }}>
+            <div style={{
+                maxWidth: '1400px',
                 margin: '0 auto',
+                display: 'flex',
+                alignItems: 'flex-start',
                 position: 'relative'
             }}>
-                {/* Style injection for responsive behavior */}
-                <style>{`
-                    @media (max-width: 768px) {
-                        .split-layout {
-                            flex-direction: column-reverse !important;
-                        }
-                        .sticky-visual {
-                            position: relative !important;
-                            height: 50vh !important;
-                            width: 100% !important;
-                            top: 0 !important;
-                        }
-                        .content-scroll {
-                            width: 100% !important;
-                            padding-top: 2rem !important;
-                        }
-                        .header-section {
-                            text-align: center;
-                        }
-                    }
-                `}</style>
 
-                {/* Left Side: Scrollable Content */}
-                <div className="content-scroll" style={{
+                {/* Left Column: Scrollable Content */}
+                <div style={{
                     width: '50%',
-                    padding: '4rem 2rem',
-                    boxSizing: 'border-box',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '10rem' // Space between sections
+                    padding: '6rem 4rem 10rem',
+                    zIndex: 10
                 }}>
-                    {/* Header Section */}
-                    <header className="header-section" style={{
-                        marginBottom: '-5rem', // Pull closer to the first item
-                        paddingBottom: '5rem'
-                    }}>
-                        <motion.h1
+                    <header style={{ marginBottom: '6rem' }}>
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: 1.1, marginBottom: '1rem' }}
+                            transition={{ duration: 0.8 }}
                         >
-                            Emergency<br />
-                            <span style={{ color: 'var(--primary-color)' }}>Response Guide</span>
-                        </motion.h1>
-                        <p style={{ fontSize: '1.25rem', opacity: 0.8, maxWidth: '500px', lineHeight: 1.6 }}>
-                            Simple, step-by-step instructions for common first aid emergencies.
-                            Scroll to explore and find the help you need.
-                        </p>
-                        <div style={{ marginTop: '1rem' }}>
-                            <TextToSpeech text="Simple, step-by-step instructions for common first aid emergencies. Scroll to explore and find the help you need." />
-                        </div>
+                            <h1 style={{
+                                fontSize: '4.5rem',
+                                fontWeight: '800',
+                                lineHeight: 1.1,
+                                marginBottom: '1.5rem',
+                                background: 'linear-gradient(to right, #334155, #64748b)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}>
+                                Emergency<br />
+                                <span style={{ color: '#F472B6', WebkitTextFillColor: '#F472B6' }}>Response Guide</span>
+                            </h1>
+                            <p style={{ fontSize: '1.25rem', color: '#64748b', lineHeight: 1.6, maxWidth: '500px' }}>
+                                Simple, step-by-step instructions for common first aid emergencies. Scroll to explore and find the help you need.
+                            </p>
+                        </motion.div>
                     </header>
 
-                    {/* Lesson Sections */}
-                    {lessonsData.map((lesson) => (
-                        <div
-                            key={lesson.id}
-                            data-id={lesson.id}
-                            ref={el => sectionRefs.current[lesson.id] = el}
-                            style={{
-                                minHeight: '50vh', // Slightly reduced to fit cards better
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                padding: '1rem' // Added padding for card container
-                            }}
-                        >
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8rem' }}>
+                        {lessonsData.map((lesson, index) => (
                             <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-50px" }}
+                                key={lesson.id}
+                                onViewportEnter={() => setActiveLesson(lesson)}
+                                viewport={{ margin: "-40% 0px -40% 0px" }} // Trigger when element is near center
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5 }}
-                                whileHover={{ scale: 1.02, translateY: -5 }}
-                                style={{
-                                    background: 'rgba(255, 255, 255, 0.8)',
-                                    backdropFilter: 'blur(10px)',
-                                    borderRadius: '24px',
-                                    padding: '2.5rem',
-                                    boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
-                                    border: `1px solid ${lesson.color}30`, // Subtle colored border
-                                    transition: 'all 0.3s ease'
-                                }}
                             >
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                                    <div style={{
-                                        padding: '0.8rem',
-                                        borderRadius: '16px',
-                                        background: `${lesson.color}20`,
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center'
-                                    }}>
-                                        <lesson.icon size={28} color={lesson.color} />
-                                    </div>
-                                    <span style={{
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '1.5px',
-                                        fontWeight: '700',
-                                        color: lesson.color,
-                                        fontSize: '0.85rem'
-                                    }}>
-                                        First Aid
-                                    </span>
-                                </div>
-
-                                <h2 style={{ fontSize: '2.5rem', margin: '0 0 1rem', fontWeight: '800', color: '#1e293b' }}>
-                                    {lesson.title}
-                                </h2>
-
-                                <p style={{ fontSize: '1.1rem', opacity: 0.8, marginBottom: '2rem', lineHeight: 1.6, color: '#475569' }}>
-                                    Learn exactly what to do when someone is experiencing {lesson.title.toLowerCase()}.
-                                    Quick thinking can save lives.
-                                </p>
-
                                 <Link to={`/lesson/${lesson.id}`} style={{ textDecoration: 'none' }}>
-                                    <button
-                                        style={{
-                                            padding: '1rem 2rem',
-                                            borderRadius: '50px',
-                                            border: 'none',
+                                    <div style={{
+                                        background: 'rgba(255, 255, 255, 0.8)',
+                                        borderRadius: '32px',
+                                        padding: '3rem',
+                                        boxShadow: activeLesson.id === lesson.id
+                                            ? `0 20px 40px -10px ${lesson.color}30`
+                                            : '0 10px 30px -10px rgba(0,0,0,0.05)',
+                                        border: '1px solid rgba(255,255,255,0.5)',
+                                        backdropFilter: 'blur(20px)',
+                                        transition: 'all 0.3s ease',
+                                        transform: activeLesson.id === lesson.id ? 'scale(1.02)' : 'scale(1)'
+                                    }}>
+                                        <div style={{
+                                            display: 'inline-flex',
+                                            padding: '1rem 1.5rem',
+                                            background: `${lesson.color}15`,
+                                            color: lesson.color,
+                                            borderRadius: '100px',
+                                            fontWeight: '700',
+                                            fontSize: '0.9rem',
+                                            marginBottom: '1.5rem',
+                                            alignItems: 'center',
+                                            gap: '0.5rem',
+                                            letterSpacing: '1px'
+                                        }}>
+                                            <lesson.icon size={18} />
+                                            {lesson.title.toUpperCase()}
+                                        </div>
+
+                                        <h2 style={{
+                                            fontSize: '3.5rem',
+                                            fontWeight: '800',
+                                            color: '#1e293b',
+                                            marginBottom: '1.5rem',
+                                            lineHeight: 1.1
+                                        }}>
+                                            {lesson.title}
+                                        </h2>
+
+                                        <p style={{
+                                            fontSize: '1.2rem',
+                                            color: '#64748b',
+                                            lineHeight: 1.7,
+                                            marginBottom: '2.5rem'
+                                        }}>
+                                            Learn exactly what to do when someone is experiencing {lesson.title.toLowerCase()}.
+                                            Quick thinking can save lives.
+                                        </p>
+
+                                        <button style={{
+                                            padding: '1rem 2.5rem',
                                             background: lesson.color,
-                                            color: '#fff',
-                                            fontSize: '1rem',
-                                            fontWeight: '600',
+                                            color: 'white',
+                                            border: 'none',
+                                            borderRadius: '100px',
+                                            fontSize: '1.1rem',
+                                            fontWeight: '700',
                                             cursor: 'pointer',
                                             display: 'flex',
                                             alignItems: 'center',
-                                            gap: '0.5rem',
-                                            boxShadow: `0 10px 20px -5px ${lesson.color}80`,
-                                            transition: 'transform 0.2s',
-                                            width: 'fit-content'
-                                        }}
-                                        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
-                                        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                                    >
-                                        Start Guide <ArrowRight size={18} />
-                                    </button>
+                                            gap: '0.8rem',
+                                            boxShadow: `0 10px 20px -5px ${lesson.color}60`
+                                        }}>
+                                            Start Guide <ArrowRight size={20} />
+                                        </button>
+                                    </div>
                                 </Link>
                             </motion.div>
-                        </div>
-                    ))}
-
-                    <div style={{ height: '20vh' }} /> {/* Footer space */}
+                        ))}
+                    </div>
                 </div>
 
-                {/* Right Side: Sticky Visuals */}
-                <div className="sticky-visual" style={{
+                {/* Right Column: Sticky Visuals */}
+                <div style={{
                     width: '50%',
                     height: '100vh',
                     position: 'sticky',
@@ -204,58 +140,59 @@ const HomePage = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    background: 'rgba(15, 23, 42, 0.3)', // Dark Glass
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
+                    padding: '4rem',
+                    background: 'radial-gradient(circle at center, #f1f5f9 0%, #e2e8f0 100%)',
                     overflow: 'hidden'
                 }}>
                     <AnimatePresence mode="wait">
                         <motion.div
-                            key={activeLesson.id}
-                            initial={{ opacity: 0, scale: 1.1 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.5 }}
+                            key={activeLesson ? activeLesson.id : 'empty'}
+                            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                            exit={{ opacity: 0, scale: 1.1, rotate: 5 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 20 }}
                             style={{
                                 width: '100%',
-                                height: '100%',
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
+                                maxWidth: '600px',
+                                aspectRatio: '1',
+                                background: 'white',
+                                borderRadius: '40px',
+                                padding: '2rem',
+                                boxShadow: '0 40px 80px -20px rgba(0,0,0,0.15)',
                                 display: 'flex',
                                 alignItems: 'center',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
+                                position: 'relative',
+                                overflow: 'hidden'
                             }}
                         >
-                            {/* Background Gradient Mesh */}
+                            {/* Decorative Background Blob */}
                             <div style={{
                                 position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                transform: 'translate(-50%, -50%)',
-                                width: '120%',
-                                height: '120%',
-                                background: `radial-gradient(circle at center, ${activeLesson.color}20 0%, transparent 70%)`,
-                                zIndex: 1
+                                width: '150%',
+                                height: '150%',
+                                background: activeLesson ? `radial-gradient(circle, ${activeLesson.color}20 0%, transparent 70%)` : 'none',
+                                zIndex: 0
                             }} />
 
-                            {/* Main Image */}
-                            <img
-                                src={activeLesson.cover}
-                                alt={activeLesson.title}
-                                style={{
-                                    maxWidth: '80%',
-                                    maxHeight: '80%',
-                                    objectFit: 'contain',
-                                    zIndex: 2,
-                                    filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))'
-                                }}
-                            />
+                            {activeLesson && (
+                                <img
+                                    src={activeLesson.cover}
+                                    alt={activeLesson.title}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'contain',
+                                        zIndex: 1
+                                    }}
+                                />
+                            )}
                         </motion.div>
                     </AnimatePresence>
                 </div>
+
             </div>
-        </div >
+        </div>
     );
 };
 

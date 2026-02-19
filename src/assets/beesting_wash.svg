@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#FFFBEB"/>
+  <circle cx="200" cy="110" r="50" fill="#FEF3C7"/>
+  <!-- Water tap -->
+  <rect x="185" y="70" width="30" height="20" rx="4" fill="#94A3B8"/>
+  <rect x="210" y="75" width="15" height="10" rx="3" fill="#94A3B8"/>
+  <!-- Water drops -->
+  <path d="M200 90 Q198 100 200 110" stroke="#60A5FA" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M207 92 Q205 102 207 112" stroke="#60A5FA" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M193 93 Q191 103 193 113" stroke="#60A5FA" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Hands under water -->
+  <ellipse cx="200" cy="125" rx="25" ry="10" fill="#FBBF24" opacity="0.4"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#92400E">Step 3</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#78350F">Wash with soap and water</text>
+</svg>

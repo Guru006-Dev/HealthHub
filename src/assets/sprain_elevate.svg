@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#ECFDF5"/>
+  <circle cx="200" cy="110" r="50" fill="#D1FAE5"/>
+  <!-- Elevated foot on pillow -->
+  <rect x="150" y="115" width="100" height="20" rx="6" fill="#A7F3D0"/>
+  <!-- Pillow under leg -->
+  <ellipse cx="200" cy="120" rx="40" ry="12" fill="#6EE7B7"/>
+  <!-- Leg elevated -->
+  <rect x="180" y="80" width="40" height="50" rx="16" fill="#34D399" opacity="0.5"/>
+  <!-- Up arrow -->
+  <path d="M245 120 L245 85" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+  <path d="M240 92 L245 82 L250 92" stroke="#059669" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- "E" letter -->
+  <text x="200" y="155" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="24" font-weight="900" fill="#059669">E</text>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#065F46">Step 4: Elevate</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#064E3B">Raise above your heart</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#ECFDF5"/>
+  <circle cx="200" cy="110" r="50" fill="#D1FAE5"/>
+  <!-- Ice pack on leg -->
+  <rect x="175" y="90" width="50" height="40" rx="10" fill="#93C5FD"/>
+  <line x1="200" y1="98" x2="200" y2="122" stroke="white" stroke-width="2"/>
+  <line x1="188" y1="110" x2="212" y2="110" stroke="white" stroke-width="2"/>
+  <!-- Cool lines -->
+  <path d="M230 95 Q240 90 240 100" stroke="#60A5FA" stroke-width="2" fill="none"/>
+  <path d="M235 105 Q245 100 245 110" stroke="#60A5FA" stroke-width="2" fill="none"/>
+  <!-- "I" letter -->
+  <text x="200" y="155" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="24" font-weight="900" fill="#059669">I</text>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#065F46">Step 2: Ice</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#064E3B">Apply ice for 20 minutes</text>
+</svg>

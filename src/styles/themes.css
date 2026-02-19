@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
     /* Cozy Theme (Warm & Homely) */
@@ -84,13 +87,15 @@ body {
 }
 
 /* Apply smooth transition to all theme-able properties on all elements */
-*, *::before, *::after {
-    transition: background-color var(--transition-speed) ease-in-out, 
-                color var(--transition-speed) ease-in-out, 
-                border-color var(--transition-speed) ease-in-out, 
-                fill var(--transition-speed) ease-in-out, 
-                stroke var(--transition-speed) ease-in-out,
-                box-shadow var(--transition-speed) ease-in-out;
+*,
+*::before,
+*::after {
+    transition: background-color var(--transition-speed) ease-in-out,
+        color var(--transition-speed) ease-in-out,
+        border-color var(--transition-speed) ease-in-out,
+        fill var(--transition-speed) ease-in-out,
+        stroke var(--transition-speed) ease-in-out,
+        box-shadow var(--transition-speed) ease-in-out;
 }
 
 h1,
@@ -141,6 +146,27 @@ button {
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     /* Bouncy transition */
     overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Modern Button Hover Effect */
+.btn-large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s ease;
+    z-index: -1;
+    transform: skewX(-20deg);
+    transform-origin: left;
+}
+
+.btn-large:hover::before {
+    width: 150%;
 }
 
 /* Glass Card Utility */
@@ -151,6 +177,12 @@ button {
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: var(--radius);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .glass-card {

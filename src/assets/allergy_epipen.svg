@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="20" fill="#F5F3FF"/>
+  <circle cx="200" cy="110" r="50" fill="#EDE9FE"/>
+  <!-- EpiPen shape -->
+  <rect x="185" y="75" width="30" height="70" rx="8" fill="#7C3AED"/>
+  <rect x="190" y="80" width="20" height="15" rx="4" fill="#A78BFA"/>
+  <!-- Needle tip -->
+  <rect x="196" y="145" width="8" height="12" rx="2" fill="#5B21B6"/>
+  <line x1="200" y1="157" x2="200" y2="165" stroke="#5B21B6" stroke-width="2" stroke-linecap="round"/>
+  <!-- Button -->
+  <circle cx="200" cy="100" r="6" fill="#C4B5FD"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="20" font-weight="700" fill="#5B21B6">Step 2</text>
+  <text x="200" y="240" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="14" fill="#4C1D95">Help use their EpiPen</text>
+</svg>

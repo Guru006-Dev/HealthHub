@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { ArrowLeft, Navigation } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import TextToSpeech from '../components/TextToSpeech';
 
@@ -19,6 +19,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const FindHelpPage = () => {
+    const navigate = useNavigate();
     const [position, setPosition] = useState(null); // [lat, lng]
     const [loading, setLoading] = useState(true);
     const [hospitals, setHospitals] = useState([]);
@@ -58,12 +59,23 @@ const FindHelpPage = () => {
 
     return (
         <div className="container" style={{ paddingBottom: '3rem' }}>
-            <Link
-                to="/home"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', margin: '2rem 0', textDecoration: 'none', color: 'var(--secondary-color)', fontWeight: 'bold' }}
+            <button
+                onClick={() => navigate(-1)}
+                style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    margin: '2rem 0',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    color: 'var(--secondary-color)',
+                    fontWeight: 'bold',
+                    fontSize: '1rem'
+                }}
             >
-                <ArrowLeft size={20} /> Back to Home
-            </Link>
+                <ArrowLeft size={20} /> Go Back
+            </button>
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
